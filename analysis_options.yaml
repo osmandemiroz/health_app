@@ -1,0 +1,10 @@
+analyzer:
+  errors:
+    file_names: ignore
+include: package:very_good_analysis/analysis_options.yaml
+
+linter:
+  rules:
+    sort_pub_dependencies: false
+    public_member_api_docs: false
+    use_setters_to_change_properties: false
