@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:health_app/feature/auth/view/login_view.dart';
+import 'package:health_app/product/utils/colors.dart';
+import 'package:responsive_sizer/responsive_sizer.dart';
 
 void main() => runApp(const MyApp());
 
@@ -7,14 +10,16 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Material App',
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Material App Bar'),
-        ),
-        body: const Center(
-          child: Text('Hello World'),
+    return ResponsiveSizer(
+      builder: (context, orientation, screenType) => MaterialApp(
+        home: const LoginView(),
+        theme: ThemeData.light().copyWith(
+          primaryColor: AppColors.primaryGreen,
+          appBarTheme: const AppBarTheme(
+            backgroundColor: AppColors.primaryGreen,
+            foregroundColor: AppColors.primaryGreen,
+          ),
+          scaffoldBackgroundColor: AppColors.greyLight,
         ),
       ),
     );
